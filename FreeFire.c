@@ -338,8 +338,8 @@ void menuVetor(MochilaVetor *m) {
                 break;
             case 7:
                 printf("Comparações acumuladas:\n");
-                printf(" - Busca sequencial (vetor): %lld\n", seqComparisonsVetor);
-                printf(" - Busca binária (vetor): %lld\n", binComparisonsVetor);
+                printf(" - Busca sequencial: %lld\n", seqComparisonsVetor);
+                printf(" - Busca binária: %lld\n", binComparisonsVetor);
                 break;
             case 0:
                 break;
