@@ -271,12 +271,12 @@ void menuVetor(MochilaVetor *m) {
     char nomeBusca[NOME_LEN], tipo[TIPO_LEN];
     Item it;
     do {
-        printf("\n=== Mochila (Vetor) ===\n");
+        printf("\n=== Mochila ===\n");
         printf("1. Inserir item\n");
         printf("2. Remover item por nome\n");
         printf("3. Listar itens\n");
         printf("4. Buscar sequencial (linear)\n");
-        printf("5. Ordenar por nome (Selection Sort)\n");
+        printf("5. Ordenar por nome\n");
         printf("6. Buscar binária (requer ordenação)\n");
         printf("7. Mostrar contadores de comparações\n");
         printf("0. Voltar ao menu principal\n");
@@ -300,7 +300,7 @@ void menuVetor(MochilaVetor *m) {
                 listarVetor(m);
                 break;
             case 4:
-                lerString("Nome para busca (sequencial): ", nomeBusca, NOME_LEN);
+                lerString("Nome para busca: ", nomeBusca, NOME_LEN);
                 {
                     clock_t t0 = clock();
                     int idx = buscarSequencialVetor(m, nomeBusca);
@@ -309,7 +309,7 @@ void menuVetor(MochilaVetor *m) {
                     if (idx != -1) {
                         printf("Item encontrado no índice %d:\n", idx);
                         imprimirItem(&m->itens[idx]);
-                    } else printf("Item não encontrado (sequencial).\n");
+                    } else printf("Item não encontrado.\n");
                     printf("Tempo: %.6f s | Comparações (seq vetor): %lld\n", tm, seqComparisonsVetor);
                 }
                 break;
@@ -323,7 +323,7 @@ void menuVetor(MochilaVetor *m) {
                 }
                 break;
             case 6:
-                lerString("Nome para busca (binária): ", nomeBusca, NOME_LEN);
+                lerString("Nome para busca: ", nomeBusca, NOME_LEN);
                 {
                     clock_t t0 = clock();
                     int idx = buscarBinariaVetor(m, nomeBusca);
@@ -354,7 +354,7 @@ void menuLista(No **cabeca) {
     char nomeBusca[NOME_LEN], tipo[TIPO_LEN];
     Item it;
     do {
-        printf("\n=== Mochila (Lista Encadeada) ===\n");
+        printf("\n=== Mochila ===\n");
         printf("1. Inserir item\n");
         printf("2. Remover item por nome\n");
         printf("3. Listar itens\n");
